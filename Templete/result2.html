@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result | Mental Health</title>
+  <meta name="description" content="NeuraLife a 3 minute depression test">
+  <meta name="keywords" content="depression test using Machine learning">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" href="\static\css\font-awesome.min.css">
+  <link rel="stylesheet" href="\static\css\bootstrap.min.css">
+  <link rel="stylesheet" href="\static\style.css">
+
+  
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- <a class="navbar-brand" href="#"><img src="{{url_for('static',filename='img/brain.png')}}"
+                  class="img-responsive" style="width: 140px;
+                  height: auto; margin-top: -16px;"></a> -->
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class=""><a href="/" class='btn'>Home</a></li>
+                <li class=""><a href="/" class='btn'>Take Test</a></li>
+                <li class=""><a href="/aboutus" class='btn'>About us</a></li>
+                <li class=""><a href="/contactus" class='btn'>Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+              <img src="{{url_for('img',filename='/brain.png')}}" height="100px">
+            </div>
+            <div class="banner-text text-center">
+              {% block code_block %}<h1 class="white">{{result}}</h1>{% endblock %}
+              <p>Please go through the description down below</p>
+              <!-- <a href="#" class="btn btn-appoint" style="font-size: 15px;">Guidance</a> -->
+            </div>
+            <div class="overlay-detail text-center">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ banner-->
+
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description dark-colour-fonts">
+        <h3>Detailed Analysis</h3>
+        <p>Anhedonia is the feeling of not enjoying something you once enjoyed. Scores range from 0
+            to 3, with 0 being negligible and 3 being high. Your score is {% block
+                code1_block %}{{score[0]}}{% endblock %}.
+            <br>
+            <br>
+            Depressed mood is a constant feeling of sadness and lack of interest. Scores range from
+            0 to 3, with 0 being negligible and 3 being high. Your score is {% block
+                code2_block %}{{score[1]}}{% endblock %}.
+            <br>
+            <br>
+            Sleep difficulties indicate trouble falling asleep and poor quality of sleep. Scores
+            range from 0 to 3, with 0 being negligible and 3 being high. Your score is {% block
+                code3_block %}{{score[2]}}{% endblock %}.
+            <br>
+            <br>
+            Fatigue occurs when one feels tired all day due to physical or mental exertion. Scores
+            range from 0 to 3, with 0 being negligible and 3 being high. Your score is {% block
+                code4_block %}{{score[3]}}{% endblock %}.
+            <br>
+            <br>
+            Appetite changes indicate an alteration in your food intake - increase or decrease from
+            your normal capacity. Scores range from 0 to 3, with 0 being negligible and 3 being
+            high. Your score is {% block
+                code5_block %}{{score[4]}}{% endblock %}.
+            <br>
+            <br>
+            Feeling of worthlessness means experiencing feelings of hopelessness and feeling
+            insignificant. Scores range from 0 to 3, with 0 being negligible and 3 being high. Your
+            score is {% block
+                code6_block %}{{score[5]}}{% endblock %}.
+            <br>
+            <br>
+            Concentration difficulties include the inability to pay attention to and focus on
+            details of your current work. Scores range from 0 to 3, with 0 being negligible and 3
+            being high. Your score is {% block
+                code7_block %}{{score[6]}}{% endblock %}.
+            <br>
+            <br>
+            Psychomotor agitation is the feeling of restlessness and involuntary movements like
+            tapping, pacing and more. Scores range from 0 to 3, with 0 being negligible and 3 being
+            high. Your score is {% block
+                code8_block %}{{score[7]}}{% endblock %}.
+            <br>
+            <br>
+            Thoughts of death means thinking of death without acting on it immediately. Scores range
+            from 0 to 3, with 0 being negligible and 3 being high. Your score is {% block
+                code9_block %}{{score[8]}}{% endblock %}.
+            <br>
+            <br>
+            It sure can be overwhelming to see such a detailed analysis of your report. You can
+            contact Felicity and take steps for yourself if you are seeking any type of mental
+            health care.
+        </p>
+      </div><div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description dark-colour-fonts">
+                <h3>It's something important you want to know.</h3>
+                <p>If you have some symptoms of depression. Right now, these symptoms are likely causing problems in
+                  your daily life. These problems may be big, like making it hard for you to take care of everyday
+                  activities and enjoy the things you usually do. You should get help right away.</p>
+              </div>
+            </div>
+            <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+            <div class="more-features-box-text-description dark-colour-fonts">
+              <h3 class="dark-colour-fonts">List of things you should do.</h3>
+              <br>
+              <p> <b>1. Get in a routine.</b> If you’re depressed, you need a routine
+              </p>
+              <br>
+              <p> <b>2. Set goals. </b>When you're depressed, you may feel like you can't accomplish anything. That
+                makes you feel
+              <p>worse about yourself. To push back, set daily goals for yourself.</p>
+              </p>
+              <br>
+              <p> <b>3. Exercise</b> It temporarily boosts feel-good chemicals called endorphins. It may also have
+                long-term benefits for
+              <p> people with depression. Regular exercise seems to encourage the brain to rewire itself in positive
+                ways, Cook </p>
+              <p> says.
+
+                How much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few </p>
+              <p>times a week can help.
+              </p>
+              <br>
+              <p> <b>4. Eat Healthy.</b> There is no magic diet that fixes depression. It's a good idea to watch what
+                you eat, though. If
+              <p> depression tends to make you overeat, getting in control of your eating will help you feel better.</p>
+              </p>
+              <br>
+              <p> <b>5. Have Fun.</b> If you’re depressed, make time for things you enjoy. What if nothing seems fun
+                anymore? "That's
+              <p> just a symptom of depression," Cook says. You have to keep trying anyway.
+
+                As strange as it might sound, you </p>
+              <p> have to work at having fun. Plan things you used to enjoy, even if they feel like a chore. Keep going
+                to the </p>
+              <p> movies. Keep going out with friends for dinner.
+              </p>
+              </p>
+            </div>
+            <div class="more-features-box-text-icon"> <i class="fa fa-angle-right icon-style" aria-hidden="true"></i> </div>
+            <div class="more-features-box-text-description dark-colour-fonts">
+              <h3>Find Help.</h3>
+              <p>When you're feeling depressed, it can be hard to have energy to make a phone call. But having support
+                from others can be helpful. Try talking to your doctor or a therapist. They can help you get treatment
+                to deal with depression. You can also try telling family and friends how you’re feeling.
+                How you’re feeling now isn't how you’ll always feel. People do get better. There are many good
+                treatments for depression.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!--/ about-->
+
+
+  <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery.easing.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+
+</body>
+
+</html>
